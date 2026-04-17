@@ -157,19 +157,112 @@
         .section-head h2 { margin-bottom: 1rem; }
         .section-head p { color: var(--text-muted); font-size: 1.1rem; }
 
-        /* VALUE PROPOSITION */
-        .value-section { background: var(--bg-secondary); }
+        /* VALUE PROPOSITION — Animated cards */
+        .value-section { background: var(--bg-secondary); position: relative; }
         .value-grid {
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;
         }
         .value-card {
-            padding: 2.5rem 2rem; border: 1px solid var(--border);
-            background: var(--bg-primary); transition: all 0.3s;
+            --delay: 0ms;
+            position: relative;
+            padding: 2.75rem 2rem 2.5rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            isolation: isolate;
+            opacity: 0;
+            transform: translateY(32px);
+            transition:
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.7s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
         }
-        .value-card:hover { border-color: var(--gold); transform: translateY(-4px); }
-        .value-card .icon { font-size: 2rem; color: var(--gold); margin-bottom: 1.5rem; }
-        .value-card h3 { margin-bottom: 1rem; color: var(--text-light); }
-        .value-card p { color: var(--text-muted); font-size: 0.95rem; }
+        .value-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: var(--delay), var(--delay), 0s, 0s;
+        }
+        .value-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-6px);
+            box-shadow:
+                0 24px 48px -24px rgba(232,168,76,0.28),
+                0 0 0 1px rgba(232,168,76,0.12);
+        }
+        /* Corner brackets — expand on hover */
+        .value-card::before,
+        .value-card::after {
+            content: '';
+            position: absolute;
+            width: 18px; height: 18px;
+            border: 1px solid var(--gold);
+            opacity: 0;
+            transition: opacity 0.4s ease, width 0.5s ease, height 0.5s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .value-card::before {
+            top: 10px; left: 10px;
+            border-right: none; border-bottom: none;
+        }
+        .value-card::after {
+            bottom: 10px; right: 10px;
+            border-left: none; border-top: none;
+        }
+        .value-card:hover::before,
+        .value-card:hover::after {
+            opacity: 1;
+            width: 32px; height: 32px;
+        }
+        /* Shimmer sweep */
+        .value-card .shimmer {
+            position: absolute; inset: 0;
+            background: linear-gradient(115deg,
+                transparent 30%,
+                rgba(232,168,76,0.10) 50%,
+                transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.9s ease;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .value-card:hover .shimmer { transform: translateX(100%); }
+        .value-card > *:not(.shimmer) { position: relative; z-index: 2; }
+        .value-card .icon {
+            display: inline-flex;
+            align-items: center; justify-content: center;
+            width: 3.25rem; height: 3.25rem;
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            background: radial-gradient(circle at center, rgba(232,168,76,0.12), transparent 70%);
+            border: 1px solid rgba(232,168,76,0.22);
+            transition:
+                transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+                border-color 0.3s ease,
+                background 0.4s ease;
+        }
+        .value-card:hover .icon {
+            transform: rotate(-8deg) scale(1.08);
+            border-color: var(--gold);
+            background: radial-gradient(circle at center, rgba(232,168,76,0.22), transparent 70%);
+        }
+        .value-card h3 {
+            margin-bottom: 1rem; color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+        .value-card:hover h3 { color: var(--gold); }
+        .value-card p {
+            color: var(--text-muted); font-size: 0.95rem; line-height: 1.75;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .value-card { opacity: 1; transform: none; transition: border-color 0.2s ease; }
+            .value-card:hover { transform: none; box-shadow: none; }
+            .value-card::before, .value-card::after, .value-card .shimmer,
+            .value-card .icon { transition: none !important; animation: none !important; }
+            .value-card:hover .icon { transform: none; }
+        }
 
         /* SERVICES */
         .services-grid {
@@ -403,20 +496,23 @@
             <h2>Trois engagements qui font la différence</h2>
         </div>
         <div class="value-grid">
-            <div class="value-card">
-                <div class="icon">◈</div>
+            <div class="value-card" style="--delay: 0ms">
+                <span class="shimmer" aria-hidden="true"></span>
+                <div class="icon" aria-hidden="true">◈</div>
                 <h3>Ingénierie sur mesure</h3>
-                <p>Chaque projet est dimensionné à partir de vos factures ONEE et d'une visite technique de site. Aucune estimation : uniquement des données réelles et des calculs vérifiés — tensions Voc à −10 °C, courants MPPT, marges câbles +10 %.</p>
+                <p>Chaque projet est dimensionné à partir de vos factures ONEE et d'une visite technique de site. Aucune estimation : uniquement des données réelles et des calculs vérifiés — tensions, courants MPPT, marges câbles. Nous livrons un dossier technique complet exploitable en comité de direction.</p>
             </div>
-            <div class="value-card">
-                <div class="icon">◆</div>
+            <div class="value-card" style="--delay: 120ms">
+                <span class="shimmer" aria-hidden="true"></span>
+                <div class="icon" aria-hidden="true">◆</div>
                 <h3>Équipements premium</h3>
-                <p>Panneaux bifaciaux haut rendement, onduleurs hybrides, stockage modulaire haute tension. Nous ne sélectionnons que des fabricants reconnus, avec des garanties longues et une traçabilité complète.</p>
+                <p>Panneaux bifaciaux Jinko Tiger Neo N-type 630W (rendement 22,54 %, garantie 30 ans). Onduleurs hybrides WeCo (XTE, H-ESY, TH, TK Series). Stockage haute tension WeCo (5K3 EVO résidentiel, A-KOOL 7X tertiaire outdoor IP55). Nous ne sélectionnons que des fabricants reconnus, avec des garanties longues et une traçabilité complète.</p>
             </div>
-            <div class="value-card">
-                <div class="icon">◉</div>
+            <div class="value-card" style="--delay: 240ms">
+                <span class="shimmer" aria-hidden="true"></span>
+                <div class="icon" aria-hidden="true">◉</div>
                 <h3>Résilience & autonomie</h3>
-                <p>Architectures hybrides avec backup (EPS) intégré : votre activité continue, même en cas de coupure réseau. Supervision et monitoring à distance inclus dans chaque installation.</p>
+                <p>Architectures hybrides avec backup (EPS) intégré : votre activité continue, même en cas de coupure réseau. Temps de transfert inférieur à 20 ms. Supervision et monitoring à distance inclus dans chaque installation via application WeCo NooR.</p>
             </div>
         </div>
     </div>
@@ -690,6 +786,26 @@
         </div>
     </div>
 </footer>
+
+<script>
+    (function () {
+        var cards = document.querySelectorAll('.value-card');
+        if (!cards.length) return;
+        if (!('IntersectionObserver' in window)) {
+            cards.forEach(function (c) { c.classList.add('is-visible'); });
+            return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.18, rootMargin: '0px 0px -40px 0px' });
+        cards.forEach(function (c) { io.observe(c); });
+    })();
+</script>
 
 </body>
 </html>
