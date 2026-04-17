@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUNAVIO — Bureau d'ingénierie solaire · Marrakech, Maroc</title>
+    <meta name="description" content="SUNAVIO — Bureau d'ingénierie solaire à Marrakech. Conception de micro-réseaux photovoltaïques et stockage intelligent pour le résidentiel haut de gamme, le tertiaire, l'hôtellerie, le golf et l'industrie au Maroc.">
+    <meta name="keywords" content="énergie solaire Maroc, panneaux photovoltaïques Marrakech, micro-réseau solaire, stockage batterie, ingénierie solaire, SUNAVIO, autonomie énergétique, villa solaire Marrakech, hôtel photovoltaïque">
+    <meta name="author" content="SUNAVIO SARL">
+    <meta name="theme-color" content="#1A1A1A">
+    <link rel="canonical" href="https://sunavio.ma/">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sunavio.ma/">
+    <meta property="og:title" content="SUNAVIO — Produire son énergie, reprendre le contrôle">
+    <meta property="og:description" content="Bureau d'ingénierie solaire haut de gamme à Marrakech. Micro-réseaux &amp; stockage intelligent pour villas, hôtels, golfs, tertiaire et industrie.">
+    <meta property="og:image" content="https://sunavio.ma/og-image.jpg">
+    <meta property="og:locale" content="fr_MA">
+    <meta property="og:site_name" content="SUNAVIO">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SUNAVIO — Bureau d'ingénierie solaire">
+    <meta name="twitter:description" content="Micro-réseaux solaires haut de gamme &amp; stockage intelligent. Marrakech, Maroc.">
+    <meta name="twitter:image" content="https://sunavio.ma/og-image.jpg">
+
+    <!-- Schema.org LocalBusiness (SEO local Marrakech) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "SUNAVIO SARL",
+      "description": "Bureau d'ingénierie solaire · micro-réseaux photovoltaïques et stockage intelligent",
+      "url": "https://sunavio.ma",
+      "telephone": "+212663284444",
+      "email": "sunavio.contact@gmail.com",
+      "image": "https://sunavio.ma/og-image.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Marrakech",
+        "addressCountry": "MA"
+      },
+      "areaServed": [
+        {"@type": "City", "name": "Marrakech"},
+        {"@type": "City", "name": "Essaouira"},
+        {"@type": "AdministrativeArea", "name": "Souss-Massa"},
+        {"@type": "Country", "name": "Maroc"}
+      ],
+      "priceRange": "€€€",
+      "founder": [
+        {"@type": "Person", "name": "Anthony NEBOUT", "jobTitle": "Co-fondateur & Direction technique"},
+        {"@type": "Person", "name": "Imane ZNIN", "jobTitle": "Responsable commercial"}
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #1A1A1A;
+            --bg-secondary: #2A2A2A;
+            --bg-tertiary: #222;
+            --gold: #E8A84C;
+            --gold-dark: #D4943C;
+            --text-light: #F5F0E8;
+            --text-muted: #C8C0B4;
+            --border: #3A3A3A;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-light);
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 500; line-height: 1.2; letter-spacing: -0.01em; }
+        h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3.25rem); }
+        h3 { font-size: 1.5rem; }
+        a { color: inherit; text-decoration: none; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+
+        /* HEADER */
+        header {
+            position: fixed; top: 0; left: 0; right: 0;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 600; letter-spacing: 0.15em; color: var(--gold); }
+        .logo span { color: var(--text-light); font-weight: 400; }
+        nav ul { display: flex; gap: 2.5rem; list-style: none; }
+        nav a { color: var(--text-light); font-size: 0.9rem; font-weight: 400; transition: color 0.2s; position: relative; padding: 0.5rem 0; }
+        nav a:hover { color: var(--gold); }
+        nav a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s; }
+        nav a:hover::after { width: 100%; }
+        .cta-btn {
+            background: var(--gold); color: var(--bg-primary);
+            padding: 0.75rem 1.5rem; border: none; cursor: pointer;
+            font-weight: 600; font-size: 0.85rem; letter-spacing: 0.05em;
+            text-transform: uppercase; transition: all 0.2s;
+            display: inline-block;
+        }
+        .cta-btn:hover { background: var(--text-light); transform: translateY(-1px); }
+        .cta-btn.outline { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+        .cta-btn.outline:hover { background: var(--gold); color: var(--bg-primary); }
+        .mobile-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 1.5rem; cursor: pointer; }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #221710 100%);
+            position: relative; overflow: hidden; padding: 8rem 0 4rem;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: 0; right: -10%; width: 60%; height: 100%;
+            background: radial-gradient(circle at top right, rgba(232,168,76,0.15), transparent 70%);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0.4;
+        }
+        .hero-content { max-width: 820px; position: relative; z-index: 2; }
+        .hero-kicker {
+            color: var(--gold); font-size: 0.85rem; font-weight: 500;
+            letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1.5rem;
+            display: inline-block; padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--gold);
+        }
+        .hero h1 { margin-bottom: 1.5rem; }
+        .hero h1 em { color: var(--gold); font-style: normal; font-family: 'Cormorant Garamond', serif; }
+        .hero-lede {
+            font-size: 1.2rem; color: var(--text-muted); max-width: 640px;
+            margin-bottom: 2.5rem; font-weight: 300;
+        }
+        .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        /* SECTIONS */
+        section { padding: 6rem 0; }
+        .section-head { text-align: center; max-width: 760px; margin: 0 auto 4rem; }
+        .section-kicker {
+            color: var(--gold); font-size: 0.8rem; font-weight: 500;
+            letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1rem;
+        }
+        .section-head h2 { margin-bottom: 1rem; }
+        .section-head p { color: var(--text-muted); font-size: 1.1rem; }
+
+        /* VALUE PROPOSITION */
+        .value-section { background: var(--bg-secondary); }
+        .value-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;
+        }
+        .value-card {
+            padding: 2.5rem 2rem; border: 1px solid var(--border);
+            background: var(--bg-primary); transition: all 0.3s;
+        }
+        .value-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+        .value-card .icon { font-size: 2rem; color: var(--gold); margin-bottom: 1.5rem; }
+        .value-card h3 { margin-bottom: 1rem; color: var(--text-light); }
+        .value-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* SERVICES */
+        .services-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+        }
+        .service-card {
+            padding: 3rem 2rem; position: relative;
+            border-top: 2px solid var(--border); transition: all 0.3s;
+        }
+        .service-card:hover { border-top-color: var(--gold); }
+        .service-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem; color: var(--gold); margin-bottom: 0.5rem; font-weight: 500;
+        }
+        .service-card h3 { margin-bottom: 1rem; }
+        .service-card ul { list-style: none; margin-top: 1.5rem; }
+        .service-card ul li {
+            padding: 0.5rem 0; color: var(--text-muted);
+            font-size: 0.9rem; padding-left: 1.25rem; position: relative;
+        }
+        .service-card ul li::before {
+            content: '—'; color: var(--gold);
+            position: absolute; left: 0;
+        }
+
+        /* SECTORS */
+        .sectors-section { background: var(--bg-secondary); }
+        .sectors-grid {
+            display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;
+        }
+        .sector-card {
+            padding: 2.5rem 1.5rem; text-align: center;
+            border: 1px solid var(--border); background: var(--bg-primary);
+            transition: all 0.3s;
+        }
+        .sector-card:hover {
+            border-color: var(--gold); background: var(--bg-tertiary);
+        }
+        .sector-icon {
+            width: 64px; height: 64px; margin: 0 auto 1.5rem;
+            display: flex; align-items: center; justify-content: center;
+            border: 1px solid var(--gold); border-radius: 50%;
+            font-size: 1.5rem; color: var(--gold);
+        }
+        .sector-card h3 { font-size: 1.15rem; margin-bottom: 0.75rem; }
+        .sector-card p { font-size: 0.85rem; color: var(--text-muted); }
+
+        /* PROCESS */
+        .process-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem 2rem;
+        }
+        .process-step { position: relative; padding-left: 5rem; }
+        .process-num {
+            position: absolute; left: 0; top: 0;
+            width: 3.5rem; height: 3.5rem;
+            border: 1px solid var(--gold);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
+            color: var(--gold); font-weight: 500;
+        }
+        .process-step h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .process-step p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* NUMBERS */
+        .numbers-section {
+            background: linear-gradient(135deg, var(--bg-primary), var(--bg-tertiary));
+            position: relative;
+        }
+        .numbers-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+        }
+        .number-card { text-align: center; }
+        .number-card .num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem; font-weight: 500;
+            color: var(--gold); line-height: 1; margin-bottom: 0.5rem;
+        }
+        .number-card .num .unit { font-size: 1.5rem; color: var(--text-muted); }
+        .number-card p { color: var(--text-muted); font-size: 0.9rem; }
+
+        /* GUARANTEES */
+        .guarantees-section { background: var(--bg-secondary); }
+        .guarantees-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem 3rem;
+            max-width: 900px; margin: 0 auto;
+        }
+        .guarantee-row {
+            display: flex; justify-content: space-between; padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border); align-items: baseline;
+        }
+        .guarantee-row strong {
+            color: var(--text-light); font-weight: 400; font-size: 1.05rem;
+        }
+        .guarantee-row span { color: var(--gold); font-weight: 500; font-size: 1.1rem; }
+
+        /* TEAM */
+        .team-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;
+            max-width: 900px; margin: 0 auto;
+        }
+        .team-card {
+            padding: 2.5rem; border: 1px solid var(--border);
+            background: var(--bg-secondary); transition: all 0.3s;
+        }
+        .team-card:hover { border-color: var(--gold); }
+        .team-role {
+            color: var(--gold); font-size: 0.8rem;
+            letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem;
+        }
+        .team-card h3 { margin-bottom: 0.5rem; font-size: 1.6rem; }
+        .team-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+        .team-contact { font-size: 0.9rem; color: var(--text-light); }
+        .team-contact div { padding: 0.3rem 0; }
+        .team-contact .label { color: var(--gold); margin-right: 0.5rem; }
+
+        /* CTA */
+        .cta-section {
+            background: var(--bg-primary);
+            padding: 8rem 0; text-align: center;
+            position: relative; overflow: hidden;
+        }
+        .cta-section::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at center, rgba(232,168,76,0.1), transparent 60%);
+        }
+        .cta-content { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
+        .cta-content h2 { margin-bottom: 1.5rem; }
+        .cta-content p { color: var(--text-muted); font-size: 1.15rem; margin-bottom: 2.5rem; }
+        .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        /* FOOTER */
+        footer {
+            background: #0e0e0e; padding: 4rem 0 2rem;
+            border-top: 1px solid var(--border);
+        }
+        .footer-grid {
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem; margin-bottom: 3rem;
+        }
+        .footer-brand h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem; color: var(--gold);
+            letter-spacing: 0.15em; margin-bottom: 1rem;
+        }
+        .footer-brand p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .footer-col h5 {
+            color: var(--gold); font-size: 0.8rem;
+            letter-spacing: 0.2em; text-transform: uppercase;
+            margin-bottom: 1.25rem; font-family: 'Inter', sans-serif; font-weight: 600;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { padding: 0.3rem 0; }
+        .footer-col a { color: var(--text-muted); font-size: 0.9rem; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--gold); }
+        .footer-bottom {
+            padding-top: 2rem; border-top: 1px solid var(--border);
+            text-align: center; color: var(--text-muted); font-size: 0.85rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 960px) {
+            nav ul { display: none; }
+            nav ul.open {
+                display: flex; flex-direction: column; position: absolute;
+                top: 100%; left: 0; right: 0; background: var(--bg-primary);
+                padding: 2rem; gap: 1.5rem; border-bottom: 1px solid var(--border);
+            }
+            .mobile-toggle { display: block; }
+            .value-grid, .services-grid, .process-grid { grid-template-columns: 1fr; }
+            .sectors-grid { grid-template-columns: repeat(2, 1fr); }
+            .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+            .guarantees-grid, .team-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero { padding: 7rem 0 3rem; }
+            section { padding: 4rem 0; }
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-content > * { animation: fadeUp 0.8s ease forwards; opacity: 0; }
+        .hero-kicker { animation-delay: 0.1s; }
+        .hero h1 { animation-delay: 0.2s; }
+        .hero-lede { animation-delay: 0.3s; }
+        .hero-actions { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container nav-inner">
+        <a href="#" class="logo">SUN<span>AVIO</span></a>
+        <nav>
+            <ul id="main-nav">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#secteurs">Secteurs</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#equipe">Équipe</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="cta-btn">Nous contacter</a>
+        <button class="mobile-toggle" onclick="document.getElementById('main-nav').classList.toggle('open')">☰</button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="accueil">
+    <div class="container hero-content">
+        <span class="hero-kicker">SUNAVIO · Bureau d'ingénierie solaire</span>
+        <h1>Produire son énergie,<br><em>reprendre le contrôle.</em></h1>
+        <p class="hero-lede">
+            Nous concevons et réalisons des micro-réseaux solaires haut de gamme avec stockage intelligent, dimensionnés sur mesure à partir de vos consommations réelles. Une ingénierie de niveau industriel, au service de votre souveraineté énergétique.
+        </p>
+        <div class="hero-actions">
+            <a href="#contact" class="cta-btn">Visite technique gratuite</a>
+            <a href="#services" class="cta-btn outline">Découvrir nos services</a>
+        </div>
+    </div>
+</section>
+
+<!-- VALUE PROPOSITION -->
+<section class="value-section">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-kicker">Pourquoi SUNAVIO</div>
+            <h2>Trois engagements qui font la différence</h2>
+        </div>
+        <div class="value-grid">
+            <div class="value-card">
+                <div class="icon">◈</div>
+                <h3>Ingénierie sur mesure</h3>
+                <p>Chaque projet est dimensionné à partir de vos factures ONEE et d'une visite technique de site. Aucune estimation : uniquement des données réelles et des calculs vérifiés — tensions Voc à −10 °C, courants MPPT, marges câbles +10 %.</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">◆</div>
+                <h3>Équipements premium</h3>
+                <p>Panneaux bifaciaux haut rendement, onduleurs hybrides, stockage modulaire haute tension. Nous ne sélectionnons que des fabricants reconnus, avec des garanties longues et une traçabilité complète.</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">◉</div>
+                <h3>Résilience & autonomie</h3>
+                <p>Architectures hybrides avec backup (EPS) intégré : votre activité continue, même en cas de coupure réseau. Supervision et monitoring à distance inclus dans chaque installation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-kicker">Nos métiers</div>
+            <h2>Trois métiers, une seule exigence</h2>
+            <p>De l'audit énergétique à la mise en service, SUNAVIO couvre l'intégralité de la chaîne de valeur photovoltaïque.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-num">01</div>
+                <h3>Études & ingénierie</h3>
+                <ul>
+                    <li>Audit énergétique & analyse factures ONEE</li>
+                    <li>Dimensionnement photovoltaïque</li>
+                    <li>Conception de micro-réseaux hybrides</li>
+                    <li>APS commerciaux & dossiers techniques</li>
+                    <li>Plans 3D & schémas unifilaires</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-num">02</div>
+                <h3>Fourniture d'équipements</h3>
+                <ul>
+                    <li>Panneaux bifaciaux haut rendement</li>
+                    <li>Onduleurs hybrides 6 à 50 kW</li>
+                    <li>Stockage haute tension modulaire</li>
+                    <li>Armoires outdoor professionnelles</li>
+                    <li>Supervision & monitoring à distance</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-num">03</div>
+                <h3>Accompagnement projet</h3>
+                <ul>
+                    <li>Visite technique toujours gratuite</li>
+                    <li>Interlocuteur dédié tout le projet</li>
+                    <li>Paiement échelonné 30 / 30 / 40</li>
+                    <li>Garantie structure 10 ans</li>
+                    <li>Suivi long terme par l'équipe</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTORS -->
+<section class="sectors-section" id="secteurs">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-kicker">Nos secteurs d'intervention</div>
+            <h2>Cinq univers premium</h2>
+            <p>Nous opérons sur l'ensemble du territoire marocain, avec une expertise confirmée sur l'axe Marrakech – Essaouira – Souss.</p>
+        </div>
+        <div class="sectors-grid">
+            <div class="sector-card">
+                <div class="sector-icon">⌂</div>
+                <h3>Résidentiel</h3>
+                <p>Villas haut de gamme 3 à 20 kWc</p>
+            </div>
+            <div class="sector-card">
+                <div class="sector-icon">▣</div>
+                <h3>Tertiaire</h3>
+                <p>Bureaux, showrooms 20 à 50 kWc</p>
+            </div>
+            <div class="sector-card">
+                <div class="sector-icon">♛</div>
+                <h3>Hôtellerie</h3>
+                <p>Hôtels, riads, resorts</p>
+            </div>
+            <div class="sector-card">
+                <div class="sector-icon">⚘</div>
+                <h3>Golf & loisirs</h3>
+                <p>Clubhouses, parcours sportifs</p>
+            </div>
+            <div class="sector-card">
+                <div class="sector-icon">⚙</div>
+                <h3>Industriel</h3>
+                <p>Production, logistique 50+ kWc</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-kicker">Notre méthode</div>
+            <h2>Un parcours client jalonné</h2>
+            <p>Six étapes structurées, de la prise de contact à la mise en service, pour une maîtrise totale du projet.</p>
+        </div>
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="process-num">1</div>
+                <h3>Prise de contact</h3>
+                <p>Qualification du besoin et premier échange téléphonique avec l'équipe commerciale.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-num">2</div>
+                <h3>Visite technique gratuite</h3>
+                <p>Relevé sur site par notre équipe d'ingénierie, sans engagement.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-num">3</div>
+                <h3>Étude & dimensionnement</h3>
+                <p>Analyse de vos factures ONEE et simulation de production site par site.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-num">4</div>
+                <h3>APS commercial</h3>
+                <p>Plan 3D, schéma unifilaire et devis détaillé remis au client.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-num">5</div>
+                <h3>Installation</h3>
+                <p>Réalisation par nos équipes partenaires certifiées, avec supervision SUNAVIO.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-num">6</div>
+                <h3>Mise en service & monitoring</h3>
+                <p>Supervision à distance et suivi long terme de votre installation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NUMBERS -->
+<section class="numbers-section">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-kicker">Chiffres clés</div>
+            <h2>Une ingénierie ancrée dans le réel</h2>
+        </div>
+        <div class="numbers-grid">
+            <div class="number-card">
+                <div class="num">1 750<span class="unit"> kWh</span></div>
+                <p>Production solaire /kWc/an à Essaouira</p>
+            </div>
+            <div class="number-card">
+                <div class="num">225<span class="unit"> kWh</span></div>
+                <p>Capacité de stockage sur site tertiaire</p>
+            </div>
+            <div class="number-card">
+                <div class="num">30<span class="unit"> ans</span></div>
+                <p>Garantie linéaire panneaux</p>
+            </div>
+            <div class="number-card">
+                <div class="num">8 000<span class="unit">+</span></div>
+                <p>Cycles batteries @ 90 % DoD</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GUARANTEES -->
+<section class="guarantees-section">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-kicker">Nos garanties</div>
+            <h2>Des engagements qui tiennent la distance</h2>
+        </div>
+        <div class="guarantees-grid">
+            <div class="guarantee-row">
+                <strong>Panneaux photovoltaïques</strong>
+                <span>12 ans / 30 ans linéaire</span>
+            </div>
+            <div class="guarantee-row">
+                <strong>Structure SUNAVIO</strong>
+                <span>10 ans</span>
+            </div>
+            <div class="guarantee-row">
+                <strong>Batteries</strong>
+                <span>6 000 – 8 000+ cycles</span>
+            </div>
+            <div class="guarantee-row">
+                <strong>Onduleurs</strong>
+                <span>5 à 10 ans fabricant</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section id="equipe">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-kicker">L'équipe</div>
+            <h2>Des interlocuteurs dédiés, pas des commerciaux isolés</h2>
+            <p>Le suivi de votre projet est assuré par l'équipe SUNAVIO dans son ensemble, de l'étude à la mise en service.</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-role">Co-fondateur</div>
+                <h3>Anthony NEBOUT</h3>
+                <p class="team-desc">Direction technique & ingénierie. Conception des architectures photovoltaïques, dimensionnement, supervision des chantiers.</p>
+                <div class="team-contact">
+                    <div><span class="label">Tél</span>+212 6 63 28 44 44</div>
+                    <div><span class="label">Email</span>sunavio.contact@gmail.com</div>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-role">Responsable commercial</div>
+                <h3>Imane ZNIN</h3>
+                <p class="team-desc">Relation client & développement commercial. Premier point de contact, qualification des besoins, suivi projet.</p>
+                <div class="team-contact">
+                    <div><span class="label">Tél</span>+212 663 429 659</div>
+                    <div><span class="label">Email</span>contact.sunavio@gmail.com</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+    <div class="container cta-content">
+        <div class="section-kicker">Parlons de votre projet</div>
+        <h2>La visite technique est gratuite et sans engagement</h2>
+        <p>Nous analysons vos consommations réelles et vous remettons un avant-projet commercial complet avec plan 3D et devis détaillé sous 48 heures.</p>
+        <div class="cta-actions">
+            <a href="tel:+212663284444" class="cta-btn">📞 +212 6 63 28 44 44</a>
+            <a href="mailto:sunavio.contact@gmail.com" class="cta-btn outline">✉ sunavio.contact@gmail.com</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h4>SUNAVIO</h4>
+                <p>Bureau d'ingénierie solaire.</p>
+                <p>Micro-réseaux & stockage intelligent.</p>
+                <p style="margin-top:1rem;color:var(--gold);font-style:italic;">« Produire son énergie, reprendre le contrôle. »</p>
+            </div>
+            <div class="footer-col">
+                <h5>Navigation</h5>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#secteurs">Secteurs</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#equipe">Équipe</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contact</h5>
+                <ul>
+                    <li><a href="tel:+212663284444">+212 6 63 28 44 44</a></li>
+                    <li><a href="mailto:sunavio.contact@gmail.com">sunavio.contact@gmail.com</a></li>
+                    <li>Marrakech, Maroc</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Écosystème</h5>
+                <ul>
+                    <li>Energize.ma</li>
+                    <li>AIRMEF</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 SUNAVIO SARL — Tous droits réservés · Tribunal de Commerce de Marrakech
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
