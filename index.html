@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUNAVIO — Bureau d'ingénierie solaire · Marrakech, Maroc</title>
-    <meta name="description" content="SUNAVIO — Bureau d'ingénierie solaire à Marrakech. Conception de micro-réseaux photovoltaïques et stockage intelligent pour le résidentiel haut de gamme, le tertiaire, l'hôtellerie, le golf et l'industrie au Maroc.">
-    <meta name="keywords" content="énergie solaire Maroc, panneaux photovoltaïques Marrakech, micro-réseau solaire, stockage batterie, ingénierie solaire, SUNAVIO, autonomie énergétique, villa solaire Marrakech, hôtel photovoltaïque">
+    <title>SUNAVIO — Bureau d'ingénierie solaire à Marrakech | Micro-réseaux &amp; stockage intelligent</title>
+    <meta name="description" content="SUNAVIO conçoit et réalise des installations photovoltaïques premium sur mesure au Maroc. Villas, hôtels, golfs, tertiaire. Panneaux Jinko Tiger Neo, onduleurs WeCo. Visite technique gratuite.">
+    <meta name="keywords" content="installation solaire Marrakech, bureau études solaire Maroc, panneaux photovoltaïques haut de gamme, stockage batterie solaire, énergie solaire hôtel Maroc, onduleur hybride WeCo, Jinko Tiger Neo Maroc, micro-réseau solaire, SUNAVIO">
     <meta name="author" content="SUNAVIO SARL">
     <meta name="theme-color" content="#1A1A1A">
     <link rel="canonical" href="https://sunavio.ma/">
@@ -39,6 +39,8 @@
       "image": "https://sunavio.ma/og-image.jpg",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Villa 7 Résidence Safaa Ouidane",
+        "postalCode": "40000",
         "addressLocality": "Marrakech",
         "addressCountry": "MA"
       },
@@ -378,20 +380,104 @@
         .team-contact div { padding: 0.3rem 0; }
         .team-contact .label { color: var(--gold); margin-right: 0.5rem; }
 
-        /* CTA */
-        .cta-section {
-            background: var(--bg-primary);
-            padding: 8rem 0; text-align: center;
+        /* REALISATIONS */
+        .projects-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+        }
+        .project-card {
             position: relative; overflow: hidden;
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            transition: border-color 0.3s ease, transform 0.4s ease, box-shadow 0.4s ease;
         }
-        .cta-section::before {
-            content: ''; position: absolute; inset: 0;
-            background: radial-gradient(ellipse at center, rgba(232,168,76,0.1), transparent 60%);
+        .project-card:hover {
+            border-color: var(--gold); transform: translateY(-4px);
+            box-shadow: 0 20px 40px -24px rgba(232,168,76,0.22);
         }
-        .cta-content { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
-        .cta-content h2 { margin-bottom: 1.5rem; }
-        .cta-content p { color: var(--text-muted); font-size: 1.15rem; margin-bottom: 2.5rem; }
-        .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .project-photo {
+            aspect-ratio: 4/3;
+            background:
+                radial-gradient(circle at 30% 30%, rgba(232,168,76,0.18), transparent 55%),
+                linear-gradient(135deg, #2a2018 0%, #1a1410 100%);
+            position: relative; display: flex; align-items: center; justify-content: center;
+            color: var(--gold); font-size: 2.75rem; font-family: 'Cormorant Garamond', serif;
+            border-bottom: 1px solid var(--border);
+            opacity: 0.85;
+        }
+        .project-photo::after {
+            content: 'Photo projet'; position: absolute; bottom: 0.5rem; right: 0.75rem;
+            font-size: 0.65rem; color: var(--text-muted); opacity: 0.6;
+            letter-spacing: 0.18em; text-transform: uppercase;
+            font-family: 'Inter', sans-serif;
+        }
+        .project-body { padding: 1.5rem; }
+        .project-body h3 {
+            font-size: 1.2rem; margin-bottom: 1rem; color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+        .project-card:hover .project-body h3 { color: var(--gold); }
+        .project-specs { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+        .project-specs li {
+            font-size: 0.85rem; color: var(--text-muted);
+            padding-left: 1.15rem; position: relative;
+        }
+        .project-specs li::before {
+            content: '—'; color: var(--gold); position: absolute; left: 0;
+        }
+        .inline-cta { margin-top: 3rem; text-align: center; }
+
+        /* CONTACT */
+        .contact-section { background: var(--bg-secondary); }
+        .contact-grid {
+            display: grid; grid-template-columns: 1.15fr 1fr; gap: 3rem; align-items: start;
+        }
+        .contact-form {
+            display: flex; flex-direction: column; gap: 1rem;
+            background: var(--bg-primary); padding: 2.25rem;
+            border: 1px solid var(--border);
+        }
+        .contact-form .field { display: flex; flex-direction: column; gap: 0.4rem; }
+        .contact-form label {
+            font-size: 0.72rem; letter-spacing: 0.18em;
+            text-transform: uppercase; color: var(--gold); font-weight: 500;
+        }
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%; padding: 0.8rem 0.95rem;
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-light); font-family: inherit; font-size: 0.95rem;
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            outline: none; border-color: var(--gold); background: var(--bg-tertiary);
+        }
+        .contact-form textarea { resize: vertical; min-height: 110px; }
+        .contact-form button {
+            align-self: flex-start; border: none; margin-top: 0.5rem;
+        }
+        .form-status {
+            min-height: 1.2em; font-size: 0.9rem; color: var(--gold); margin-top: 0.25rem;
+        }
+        .contact-info {
+            padding: 2.25rem; background: var(--bg-primary);
+            border: 1px solid var(--border);
+            display: flex; flex-direction: column; gap: 1.25rem;
+        }
+        .contact-info h3 { font-size: 1.4rem; color: var(--text-light); margin-bottom: 0.25rem; }
+        .contact-info-row { display: flex; flex-direction: column; gap: 0.15rem; }
+        .contact-info-row .label {
+            font-size: 0.7rem; letter-spacing: 0.18em;
+            text-transform: uppercase; color: var(--gold);
+        }
+        .contact-info-row a,
+        .contact-info-row span { color: var(--text-light); font-size: 0.98rem; }
+        .contact-info-row a:hover { color: var(--gold); }
+        .contact-map {
+            margin-top: 0.5rem; border: 1px solid var(--border);
+            width: 100%; aspect-ratio: 16/10; filter: grayscale(0.3) contrast(1.05);
+        }
 
         /* FOOTER */
         footer {
@@ -399,7 +485,7 @@
             border-top: 1px solid var(--border);
         }
         .footer-grid {
-            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+            display: grid; grid-template-columns: 2fr 1fr 1fr;
             gap: 3rem; margin-bottom: 3rem;
         }
         .footer-brand h4 {
@@ -435,9 +521,14 @@
             .sectors-grid { grid-template-columns: repeat(2, 1fr); }
             .numbers-grid { grid-template-columns: repeat(2, 1fr); }
             .guarantees-grid, .team-grid { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; gap: 1.5rem; }
             .footer-grid { grid-template-columns: 1fr; }
             .hero { padding: 7rem 0 3rem; }
             section { padding: 4rem 0; }
+        }
+        @media (max-width: 560px) {
+            .projects-grid { grid-template-columns: 1fr; }
         }
 
         /* ANIMATIONS */
@@ -457,18 +548,20 @@
 <!-- HEADER -->
 <header>
     <div class="container nav-inner">
-        <a href="#" class="logo">SUN<span>AVIO</span></a>
+        <a href="#accueil" class="logo">SUN<span>AVIO</span></a>
         <nav>
             <ul id="main-nav">
                 <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#pourquoi">Pourquoi SUNAVIO</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#secteurs">Secteurs</a></li>
+                <li><a href="#realisations">Réalisations</a></li>
                 <li><a href="#process">Process</a></li>
                 <li><a href="#equipe">Équipe</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <a href="#contact" class="cta-btn">Nous contacter</a>
+        <a href="#contact" class="cta-btn">Diagnostic gratuit</a>
         <button class="mobile-toggle" onclick="document.getElementById('main-nav').classList.toggle('open')">☰</button>
     </div>
 </header>
@@ -489,7 +582,7 @@
 </section>
 
 <!-- VALUE PROPOSITION -->
-<section class="value-section">
+<section class="value-section" id="pourquoi">
     <div class="container">
         <div class="section-head">
             <div class="section-kicker">Pourquoi SUNAVIO</div>
@@ -522,42 +615,42 @@
 <section id="services">
     <div class="container">
         <div class="section-head">
-            <div class="section-kicker">Nos métiers</div>
-            <h2>Trois métiers, une seule exigence</h2>
-            <p>De l'audit énergétique à la mise en service, SUNAVIO couvre l'intégralité de la chaîne de valeur photovoltaïque.</p>
+            <div class="section-kicker">Nos services</div>
+            <h2>De l'audit énergétique à la mise en service</h2>
+            <p>SUNAVIO couvre l'intégralité de la chaîne de valeur photovoltaïque.</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-num">01</div>
-                <h3>Études & ingénierie</h3>
+                <h3>Études &amp; ingénierie</h3>
                 <ul>
-                    <li>Audit énergétique & analyse factures ONEE</li>
-                    <li>Dimensionnement photovoltaïque</li>
-                    <li>Conception de micro-réseaux hybrides</li>
-                    <li>APS commerciaux & dossiers techniques</li>
-                    <li>Plans 3D & schémas unifilaires</li>
+                    <li>Audit énergétique et analyse des factures ONEE</li>
+                    <li>Dimensionnement photovoltaïque sur mesure</li>
+                    <li>Conception de micro-réseaux hybrides avec stockage</li>
+                    <li>APS commerciaux et dossiers techniques détaillés</li>
+                    <li>Plans 3D et schémas unifilaires</li>
                 </ul>
             </div>
             <div class="service-card">
                 <div class="service-num">02</div>
                 <h3>Fourniture d'équipements</h3>
                 <ul>
-                    <li>Panneaux bifaciaux haut rendement</li>
-                    <li>Onduleurs hybrides 6 à 50 kW</li>
-                    <li>Stockage haute tension modulaire</li>
-                    <li>Armoires outdoor professionnelles</li>
-                    <li>Supervision & monitoring à distance</li>
+                    <li>Panneaux Jinko Tiger Neo N-type 630W bifaciaux</li>
+                    <li>Onduleurs hybrides WeCo (6 à 50 kW, mono et triphasé)</li>
+                    <li>Stockage haute tension WeCo (5K3 EVO / A-KOOL 7X)</li>
+                    <li>Coffrets de protection DC et AC conformes NM/IEC</li>
+                    <li>Supervision et monitoring à distance (App WeCo NooR)</li>
                 </ul>
             </div>
             <div class="service-card">
                 <div class="service-num">03</div>
                 <h3>Accompagnement projet</h3>
                 <ul>
-                    <li>Visite technique toujours gratuite</li>
-                    <li>Interlocuteur dédié tout le projet</li>
+                    <li>Visite technique toujours gratuite et sans engagement</li>
+                    <li>Interlocuteur dédié tout au long du projet</li>
                     <li>Paiement échelonné 30 / 30 / 40</li>
-                    <li>Garantie structure 10 ans</li>
-                    <li>Suivi long terme par l'équipe</li>
+                    <li>Garantie structure SUNAVIO 10 ans</li>
+                    <li>Suivi long terme par l'équipe complète</li>
                 </ul>
             </div>
         </div>
@@ -602,51 +695,70 @@
     </div>
 </section>
 
-<!-- PROCESS -->
-<section id="process">
+<!-- REALISATIONS -->
+<section id="realisations">
     <div class="container">
         <div class="section-head">
-            <div class="section-kicker">Notre méthode</div>
-            <h2>Un parcours client jalonné</h2>
-            <p>Six étapes structurées, de la prise de contact à la mise en service, pour une maîtrise totale du projet.</p>
+            <div class="section-kicker">Nos réalisations</div>
+            <h2>Projets récents</h2>
+            <p>Quelques réalisations représentatives de notre savoir-faire.</p>
         </div>
-        <div class="process-grid">
-            <div class="process-step">
-                <div class="process-num">1</div>
-                <h3>Prise de contact</h3>
-                <p>Qualification du besoin et premier échange téléphonique avec l'équipe commerciale.</p>
-            </div>
-            <div class="process-step">
-                <div class="process-num">2</div>
-                <h3>Visite technique gratuite</h3>
-                <p>Relevé sur site par notre équipe d'ingénierie, sans engagement.</p>
-            </div>
-            <div class="process-step">
-                <div class="process-num">3</div>
-                <h3>Étude & dimensionnement</h3>
-                <p>Analyse de vos factures ONEE et simulation de production site par site.</p>
-            </div>
-            <div class="process-step">
-                <div class="process-num">4</div>
-                <h3>APS commercial</h3>
-                <p>Plan 3D, schéma unifilaire et devis détaillé remis au client.</p>
-            </div>
-            <div class="process-step">
-                <div class="process-num">5</div>
-                <h3>Installation</h3>
-                <p>Réalisation par nos équipes partenaires certifiées, avec supervision SUNAVIO.</p>
-            </div>
-            <div class="process-step">
-                <div class="process-num">6</div>
-                <h3>Mise en service & monitoring</h3>
-                <p>Supervision à distance et suivi long terme de votre installation.</p>
-            </div>
+        <div class="projects-grid">
+            <article class="project-card">
+                <div class="project-photo" aria-hidden="true">⛳</div>
+                <div class="project-body">
+                    <h3>Golf premium — Marrakech</h3>
+                    <ul class="project-specs">
+                        <li>50,4 kWc installés</li>
+                        <li>80 panneaux Jinko Tiger Neo</li>
+                        <li>225 kWh de stockage A-KOOL 7X</li>
+                        <li>Réduction facture : 81 %</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="project-card">
+                <div class="project-photo" aria-hidden="true">⌂</div>
+                <div class="project-body">
+                    <h3>Villa R+1 haut de gamme — Marrakech</h3>
+                    <ul class="project-specs">
+                        <li>19,53 kWc installés</li>
+                        <li>31 panneaux Jinko Tiger Neo</li>
+                        <li>Stockage 31 kWh en option</li>
+                        <li>Autoconsommation : 90 %</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="project-card">
+                <div class="project-photo" aria-hidden="true">◈</div>
+                <div class="project-body">
+                    <h3>Domaine résidentiel premium — Marrakech</h3>
+                    <ul class="project-specs">
+                        <li>51,66 kWc installés</li>
+                        <li>Multi-zones de production</li>
+                        <li>Architecture hybride avec backup</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="project-card">
+                <div class="project-photo" aria-hidden="true">≈</div>
+                <div class="project-body">
+                    <h3>Résidence bord de mer — Essaouira</h3>
+                    <ul class="project-specs">
+                        <li>3,15 kWc installés</li>
+                        <li>Production : 5 510 kWh/an</li>
+                        <li>Solution compacte mono-phasée</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+        <div class="inline-cta">
+            <a href="#contact" class="cta-btn">Demander une étude personnalisée</a>
         </div>
     </div>
 </section>
 
 <!-- NUMBERS -->
-<section class="numbers-section">
+<section class="numbers-section" id="chiffres">
     <div class="container">
         <div class="section-head">
             <div class="section-kicker">Chiffres clés</div>
@@ -654,20 +766,20 @@
         </div>
         <div class="numbers-grid">
             <div class="number-card">
-                <div class="num">1 750<span class="unit"> kWh</span></div>
-                <p>Production solaire /kWc/an à Essaouira</p>
+                <div class="num">1 650 – 1 750<span class="unit"> kWh</span></div>
+                <p>Production solaire /kWc/an selon localisation</p>
             </div>
             <div class="number-card">
-                <div class="num">225<span class="unit"> kWh</span></div>
-                <p>Capacité de stockage sur site tertiaire</p>
+                <div class="num">112 à 450<span class="unit"> kWh</span></div>
+                <p>Capacité de stockage modulaire par site</p>
             </div>
             <div class="number-card">
                 <div class="num">30<span class="unit"> ans</span></div>
-                <p>Garantie linéaire panneaux</p>
+                <p>Garantie linéaire panneaux Jinko</p>
             </div>
             <div class="number-card">
-                <div class="num">8 000<span class="unit">+</span></div>
-                <p>Cycles batteries @ 90 % DoD</p>
+                <div class="num">8 000<span class="unit">+ cycles</span></div>
+                <p>Batteries WeCo @ 90 % DoD</p>
             </div>
         </div>
     </div>
@@ -682,20 +794,67 @@
         </div>
         <div class="guarantees-grid">
             <div class="guarantee-row">
-                <strong>Panneaux photovoltaïques</strong>
-                <span>12 ans / 30 ans linéaire</span>
+                <strong>Panneaux Jinko Tiger Neo</strong>
+                <span>12 ans / 30 ans linéaire (87,4 %)</span>
+            </div>
+            <div class="guarantee-row">
+                <strong>Onduleurs WeCo</strong>
+                <span>10 ans constructeur</span>
             </div>
             <div class="guarantee-row">
                 <strong>Structure SUNAVIO</strong>
                 <span>10 ans</span>
             </div>
             <div class="guarantee-row">
-                <strong>Batteries</strong>
-                <span>6 000 – 8 000+ cycles</span>
+                <strong>Parfait achèvement</strong>
+                <span>1 an — main-d'œuvre</span>
             </div>
             <div class="guarantee-row">
-                <strong>Onduleurs</strong>
-                <span>5 à 10 ans fabricant</span>
+                <strong>Batteries WeCo</strong>
+                <span>6 000 – 8 000+ cycles</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-kicker">Notre process</div>
+            <h2>Un parcours client jalonné</h2>
+            <p>Six étapes structurées, de la prise de contact à la mise en service, pour une maîtrise totale du projet.</p>
+        </div>
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="process-num">1</div>
+                <h3>Prise de contact</h3>
+                <p>Qualification du besoin et premier échange téléphonique avec l'équipe. Nous identifions ensemble vos objectifs énergétiques et vos contraintes.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-num">2</div>
+                <h3>Visite technique gratuite</h3>
+                <p>Déplacement de notre équipe d'ingénierie sur votre site. Relevé technique, évaluation des zones de production potentielles, analyse de votre TGBT. Sans engagement.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-num">3</div>
+                <h3>Étude &amp; dimensionnement</h3>
+                <p>Analyse de vos 12 derniers mois de factures ONEE, simulation de production site par site, vérification des configurations techniques (tensions, courants, câblage).</p>
+            </div>
+            <div class="process-step">
+                <div class="process-num">4</div>
+                <h3>APS commercial</h3>
+                <p>Remise d'un dossier complet sous 10 à 15 jours : plan d'implantation 3D, schéma unifilaire, dimensionnement détaillé, devis ligne par ligne. Exploitable en comité de direction.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-num">5</div>
+                <h3>Installation</h3>
+                <p>Réalisation sous supervision directe de l'équipe SUNAVIO. Pose de la structure, raccordement DC/AC, mise à la terre, paramétrage onduleur. Coordination chantier adaptée à votre activité.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-num">6</div>
+                <h3>Mise en service &amp; monitoring</h3>
+                <p>Tests électriques, contrôle production, configuration de l'application WeCo NooR et formation à son utilisation. Suivi long terme et maintenance préventive.</p>
             </div>
         </div>
     </div>
@@ -711,36 +870,90 @@
         </div>
         <div class="team-grid">
             <div class="team-card">
-                <div class="team-role">Co-fondateur</div>
+                <div class="team-role">Co-Fondateur</div>
                 <h3>Anthony NEBOUT</h3>
-                <p class="team-desc">Direction technique & ingénierie. Conception des architectures photovoltaïques, dimensionnement, supervision des chantiers.</p>
+                <p class="team-desc">Direction technique et ingénierie. Conception des architectures photovoltaïques, dimensionnement, supervision des chantiers.</p>
                 <div class="team-contact">
-                    <div><span class="label">Tél</span>+212 6 63 28 44 44</div>
-                    <div><span class="label">Email</span>sunavio.contact@gmail.com</div>
+                    <div><span class="label">Tél</span><a href="tel:+212663284444">+212 6 63 28 44 44</a></div>
+                    <div><span class="label">Email</span><a href="mailto:sunavio.contact@gmail.com">sunavio.contact@gmail.com</a></div>
                 </div>
             </div>
             <div class="team-card">
-                <div class="team-role">Responsable commercial</div>
+                <div class="team-role">Responsable Commercial</div>
                 <h3>Imane ZNIN</h3>
-                <p class="team-desc">Relation client & développement commercial. Premier point de contact, qualification des besoins, suivi projet.</p>
+                <p class="team-desc">Relation client et développement commercial. Premier point de contact, qualification des besoins, suivi projet.</p>
                 <div class="team-contact">
-                    <div><span class="label">Tél</span>+212 663 429 659</div>
-                    <div><span class="label">Email</span>contact.sunavio@gmail.com</div>
+                    <div><span class="label">Tél</span><a href="tel:+212663429659">+212 6 63 42 96 59</a></div>
+                    <div><span class="label">Email</span><a href="mailto:Contact.sunavio@gmail.com">Contact.sunavio@gmail.com</a></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section" id="contact">
-    <div class="container cta-content">
-        <div class="section-kicker">Parlons de votre projet</div>
-        <h2>La visite technique est gratuite et sans engagement</h2>
-        <p>Nous analysons vos consommations réelles et vous remettons un avant-projet commercial complet avec plan 3D et devis détaillé sous 48 heures.</p>
-        <div class="cta-actions">
-            <a href="tel:+212663284444" class="cta-btn">📞 +212 6 63 28 44 44</a>
-            <a href="mailto:sunavio.contact@gmail.com" class="cta-btn outline">✉ sunavio.contact@gmail.com</a>
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-kicker">Contact</div>
+            <h2>Parlons de votre projet</h2>
+            <p>La visite technique est gratuite et sans engagement.</p>
+        </div>
+        <div class="contact-grid">
+            <form class="contact-form" id="diagnostic-form" novalidate
+                  action="mailto:sunavio.contact@gmail.com" method="post" enctype="text/plain">
+                <div class="field">
+                    <label for="cf-name">Nom complet *</label>
+                    <input type="text" id="cf-name" name="nom" required autocomplete="name">
+                </div>
+                <div class="field">
+                    <label for="cf-email">Email *</label>
+                    <input type="email" id="cf-email" name="email" required autocomplete="email">
+                </div>
+                <div class="field">
+                    <label for="cf-phone">Téléphone *</label>
+                    <input type="tel" id="cf-phone" name="telephone" required autocomplete="tel">
+                </div>
+                <div class="field">
+                    <label for="cf-type">Type de projet</label>
+                    <select id="cf-type" name="type_projet">
+                        <option value="Résidentiel">Résidentiel</option>
+                        <option value="Hôtellerie">Hôtellerie</option>
+                        <option value="Golf & Loisirs">Golf &amp; Loisirs</option>
+                        <option value="Tertiaire">Tertiaire</option>
+                        <option value="Industriel">Industriel</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="cf-message">Message (optionnel)</label>
+                    <textarea id="cf-message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="cta-btn">Demander un diagnostic gratuit</button>
+                <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+            </form>
+            <aside class="contact-info">
+                <h3>Coordonnées</h3>
+                <div class="contact-info-row">
+                    <span class="label">Téléphone</span>
+                    <a href="tel:+212663284444">+212 6 63 28 44 44</a>
+                </div>
+                <div class="contact-info-row">
+                    <span class="label">Email</span>
+                    <a href="mailto:sunavio.contact@gmail.com">sunavio.contact@gmail.com</a>
+                </div>
+                <div class="contact-info-row">
+                    <span class="label">Adresse</span>
+                    <span>Villa 7 Résidence Safaa Ouidane<br>40000 Marrakech, Maroc</span>
+                </div>
+                <iframe
+                    class="contact-map"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Carte — Villa 7 Résidence Safaa Ouidane, Marrakech"
+                    src="https://www.google.com/maps?q=Villa%207%20Residence%20Safaa%20Ouidane%2C%2040000%20Marrakech%2C%20Morocco&output=embed">
+                </iframe>
+            </aside>
         </div>
     </div>
 </section>
@@ -752,17 +965,20 @@
             <div class="footer-brand">
                 <h4>SUNAVIO</h4>
                 <p>Bureau d'ingénierie solaire.</p>
-                <p>Micro-réseaux & stockage intelligent.</p>
+                <p>Micro-réseaux &amp; stockage intelligent.</p>
                 <p style="margin-top:1rem;color:var(--gold);font-style:italic;">« Produire son énergie, reprendre le contrôle. »</p>
             </div>
             <div class="footer-col">
                 <h5>Navigation</h5>
                 <ul>
                     <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#pourquoi">Pourquoi SUNAVIO</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#secteurs">Secteurs</a></li>
+                    <li><a href="#realisations">Réalisations</a></li>
                     <li><a href="#process">Process</a></li>
                     <li><a href="#equipe">Équipe</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -770,24 +986,20 @@
                 <ul>
                     <li><a href="tel:+212663284444">+212 6 63 28 44 44</a></li>
                     <li><a href="mailto:sunavio.contact@gmail.com">sunavio.contact@gmail.com</a></li>
-                    <li>Marrakech, Maroc</li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Écosystème</h5>
-                <ul>
-                    <li>Energize.ma</li>
-                    <li>AIRMEF</li>
+                    <li>Villa 7 Résidence Safaa Ouidane</li>
+                    <li>40000 Marrakech, Maroc</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            © 2026 SUNAVIO SARL — Tous droits réservés · Tribunal de Commerce de Marrakech
+            © 2026 SUNAVIO SARL — Tous droits réservés<br>
+            ICE 003721552000008 · RC 164901 Marrakech · IF 66967281 · Tribunal de Commerce de Marrakech
         </div>
     </div>
 </footer>
 
 <script>
+    // Scroll-reveal for animated cards
     (function () {
         var cards = document.querySelectorAll('.value-card');
         if (!cards.length) return;
@@ -804,6 +1016,54 @@
             });
         }, { threshold: 0.18, rootMargin: '0px 0px -40px 0px' });
         cards.forEach(function (c) { io.observe(c); });
+    })();
+
+    // Mobile nav close on link click
+    (function () {
+        var nav = document.getElementById('main-nav');
+        if (!nav) return;
+        nav.addEventListener('click', function (e) {
+            if (e.target.tagName === 'A') nav.classList.remove('open');
+        });
+    })();
+
+    // Contact form: open mail client with formatted body, then show confirmation
+    (function () {
+        var form = document.getElementById('diagnostic-form');
+        if (!form) return;
+        var status = document.getElementById('form-status');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var data = new FormData(form);
+            var nom = (data.get('nom') || '').toString().trim();
+            var email = (data.get('email') || '').toString().trim();
+            var tel = (data.get('telephone') || '').toString().trim();
+            var type = (data.get('type_projet') || '').toString().trim();
+            var msg = (data.get('message') || '').toString().trim();
+
+            if (!nom || !email || !tel) {
+                status.textContent = 'Merci de remplir les champs obligatoires.';
+                status.style.color = '#D4943C';
+                return;
+            }
+
+            var body =
+                'Nom : ' + nom + '\n' +
+                'Email : ' + email + '\n' +
+                'Téléphone : ' + tel + '\n' +
+                'Type de projet : ' + type + '\n\n' +
+                'Message :\n' + (msg || '(aucun)') + '\n';
+
+            var mailto =
+                'mailto:sunavio.contact@gmail.com' +
+                '?subject=' + encodeURIComponent('Demande de diagnostic — ' + nom) +
+                '&body=' + encodeURIComponent(body);
+
+            window.location.href = mailto;
+            status.style.color = '';
+            status.textContent = 'Merci ! Notre équipe vous contacte sous 48h.';
+            form.reset();
+        });
     })();
 </script>
 
